@@ -1,0 +1,114 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    background-image: url('pic5.jpg');
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.img-class {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-class:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 3px 15px rgba(211, 176, 102, 0.658);
+}
+
+
+#popupcontainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#popupImg {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(231, 203, 126, 0.459);
+}
+
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    font-size: 25px;
+    background: rgba(194, 135, 68, 0.589);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#prevBtn { left: 10%; }
+#nextBtn { right: 10%; }
+
+#prevBtn:hover, #nextBtn:hover {
+    background: rgba(73, 47, 16, 0.6);
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    color: rgb(236, 197, 170);
+    width: 400px;
+    height: 50px;
+    background-color: rgb(136, 88, 44);
+    border-radius: 20px;
+    box-shadow: 0px 3px 15px rgba(241, 197, 131, 0.767);
+    animation: zoomInOut 3s ease-in-out infinite;
+    position: relative;
+    margin: 50px auto 0; 
+}
+
+.no-animation {
+    animation: none !important;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
